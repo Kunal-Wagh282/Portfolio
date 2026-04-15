@@ -30,7 +30,8 @@ This portfolio website represents Kunal Wagh, a passionate Data Science and AI/M
 - Global Top 100 in Google Solution Challenge 2024
 - Winner at Cognizant Digital Nurture Technoverse 2023
 - Runner-Up at Young Indians Innovation (YII IDS3 CII)
-- Current AI ML Developer at YUG-E-VISUALS, Pune
+- ML Software Engineer at Yardi Software India Pvt Ltd
+- Backend Engineer at WheelSafar Solutions Pvt. Ltd.
 
 ## ✨ Features
 
@@ -153,18 +154,28 @@ Portfolio/
 - National Level Badminton achievements
 
 ### Portfolio/Projects
-- **COGNIZANT:** GenAI RAG-Based Voice Assistant
-- **Personal Project:** Lung Capacity Enhancing Game Prototype
-- **FUNDED PROJECT:** VR Game development in Unity
-- **Mochnix:** Lung Capacity Enhancing Game Website
-- **LCE:** Precision and information-focused project
+- **Devnagiri Sign Language Recognition:** 47-class MediaPipe and ML/DL recognition system with real-time inference
+- **Face Recognition Attendance System:** Python, OpenCV, Tkinter, and MySQL system for contactless attendance tracking
+- **Natural Language Vendor Assistant:** TensorFlow NLP chatbot collection with Python CLI and Django web interface
+- **Happy/Sad Image Classifier:** CNN emotion classifier using TensorFlow, OpenCV, and 305 labeled images
+- **Titanic Survival Analysis:** Logistic regression model analyzing passenger survival factors and predictions
+- **Lung Capacity Enhancer:** IoT healthcare MVP using Arduino, React, and Django REST Framework
+- **Udumutthu VR Rehab Game:** MetaQuest 2 VR game with Arduino pressure sensors for pediatric pulmonary rehab
+- **ExpoDash:** Exhibition dashboard platform for event workflows, analytics, and management
+- **WheelSafar Mobility Platform:** FastAPI mobility backend with ride lifecycle, onboarding, tracking, notifications, and AWS deployment
+- **Cafe Karma:** Web platform for cafe discovery with a clean, production-ready interface
+- **Cafe Querator:** Spotify-powered cafe music dashboard with table song requests and live queue
 
 ### Experience
-- **AI ML Developer** at YUG-E-VISUALS, Pune (July 2024 - Present)
-- **GenAI Intern** at Cognizant Digital Solutions, Pune (June 2024 - July 2024)
-- **AI ML Trainee** at Versatile Technologies, Aurangabad (August 2023 - October 2023)
-- **Chairperson** at GeeksforGeeks student chapter, MGMU (June 2024 - Present)
-- **Student Head** at NSS, MGM University (August 2021 - Present)
+- **ML Software Engineer** at Yardi Software India Pvt Ltd (Jan 2026 - Present)
+- **Backend Engineer** at WheelSafar Solutions Pvt. Ltd. (March 2026 - Present)
+- **ML Software Engineer Trainee** at Yardi Software India Pvt Ltd (July 2025 - Jan 2026)
+- **ML Software Engineer Intern** at Yardi Software India Pvt Ltd (Jan 2025 - July 2025)
+- **GenAI Intern** at Cognizant Digital Solutions (June 2024 - July 2024)
+- **AIML Developer** at YUG-E-VISUALS (Aug 2024 - Dec 2024)
+- **AI-ML Trainee** at Versatile Technology (Aug 2023 - Oct 2023)
+- **Chairperson** at GeeksforGeeks MGMU (July 2024 - June 2025)
+- **Student Head Coordinator** at National Service Scheme (Aug 2021 - June 2025)
 
 ### Education
 - **B.Tech Computer Science Engineering** - JNEC, MGM University (2021-2025)

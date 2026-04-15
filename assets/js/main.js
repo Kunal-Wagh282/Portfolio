@@ -100,6 +100,22 @@ Description: Gerold - Personal Portfolio HTML5 Template
 	});
 
 	$(document).ready(function ($) {
+		// Theme Toggle Js
+		const pageName = window.location.pathname.split("/").pop() || "index.html";
+		const isLightPage = pageName.includes("-light.html");
+		const targetPage = isLightPage
+			? pageName.replace("-light.html", ".html")
+			: pageName.replace(".html", "-light.html");
+		const themeLabel = isLightPage ? "Dark" : "Light";
+		const themeIcon = isLightPage ? "fa-moon" : "fa-sun";
+		const themeToggle = `<a class="theme-toggle" href="${targetPage}" aria-label="Switch to ${themeLabel} mode"><i class="fal ${themeIcon}"></i><span>${themeLabel}</span></a>`;
+
+		$(".tj-header-area .col-12").each(function () {
+			if (!$(this).find(".theme-toggle").length) {
+				$(themeToggle).insertBefore($(this).find(".menu-bar"));
+			}
+		});
+
 		// Sticky Header Js
 		var lastScrollTop = 0;
 		$(window).scroll(function () {
@@ -463,19 +479,25 @@ Description: Gerold - Personal Portfolio HTML5 Template
 					conEmail: "Enter a valid email.",
 				},
 				submitHandler: function (form) {
-					// start ajax request
 					$.ajax({
 						type: "POST",
-						url: "assets/mail/contact-form.php",
+						url: "https://formsubmit.co/ajax/kunalwagh282@gmail.com",
 						data: $("#contact-form").serialize(),
+						dataType: "json",
 						cache: false,
+						headers: {
+							Accept: "application/json",
+						},
 						success: function (data) {
-							if (data == "Y") {
+							if (data.success === "true" || data.success === true) {
 								$("#message_sent").modal("show");
 								$("#contact-form").trigger("reset");
 							} else {
 								$("#message_fail").modal("show");
 							}
+						},
+						error: function () {
+							$("#message_fail").modal("show");
 						},
 					});
 				},
