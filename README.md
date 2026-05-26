@@ -24,7 +24,7 @@ A modern, responsive portfolio website showcasing expertise in Data Science, AI/
 
 ## 🎯 About
 
-This portfolio website represents Kunal Wagh, a passionate Data Science and AI/ML Expert. The website showcases professional achievements, technical skills, project portfolio, and provides a platform for potential collaboration and contact.
+This portfolio website represents Kunal Wagh, a software engineer focused on AI, backend systems, GenAI workflows, and production APIs. The website showcases professional achievements, technical skills, project portfolio, and provides a platform for potential collaboration and contact.
 
 **Key Highlights:**
 - Global Top 100 in Google Solution Challenge 2024
@@ -84,7 +84,6 @@ Portfolio/
 │   ├── img/
 │   │   ├── hero/
 │   │   ├── portfolio/
-│   │   ├── blog/
 │   │   └── [other images]
 │   └── fonts/
 ├── index.html
@@ -136,7 +135,8 @@ Portfolio/
 ### Navigation
 - **Home:** Main landing page with hero section
 - **About:** Detailed information about experience and education
-- **Portfolio:** Showcase of projects and achievements
+- **Projects:** Showcase of projects and achievements
+- **Experience:** Professional timeline and education highlights
 - **Contact:** Contact form and information
 
 ## 📄 Sections
@@ -183,22 +183,19 @@ Portfolio/
 - **HSC** - Vidyadham Science College (2020-2021)
 - **SSC** - Podar Int. School, ICSE (2019-2020)
 
-## 💻 Skills
+## Skills
 
-| Skill | Proficiency |
-|-------|-------------|
-| Python | 100% |
-| C Programming | 95% |
-| C# | 65% |
-| GitHub | 99% |
-| React | 80% |
-| Arduino C | 99% |
+- **Languages:** Python, C, C#, JavaScript
+- **AI/ML:** TensorFlow, OpenCV, MediaPipe, scikit-learn
+- **Backend:** FastAPI, Django REST Framework, MySQL
+- **Frontend:** React
+- **Tools:** GitHub, Google Cloud, Arduino
 
 ## 📧 Contact
 
 - **Email:** kunalwagh282@gmail.com
 - **Phone:** +91 9822634213
-- **Location:** Garkheda Chh. Sambhajinagar, 431009, Maharashtra, India
+- **Location:** Chh. Sambhajinagar, Maharashtra, India
 - **LinkedIn:** [linkedin.com/in/kunalwagh282/](https://www.linkedin.com/in/kunalwagh282/)
 - **GitHub:** [github.com/Kunal-Wagh282](https://github.com/Kunal-Wagh282)
 - **Instagram:** [@__kunal.wagh__](https://www.instagram.com/__kunal.wagh__/)
