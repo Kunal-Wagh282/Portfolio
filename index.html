@@ -1,1239 +1,581 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
    <meta charset="utf-8">
-   <meta http-equiv="x-ua-compatible" content="ie=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="">
+   <title>Kunal Wagh | Software Engineer — GenAI &amp; Backend</title>
+   <meta name="description" content="Portfolio of Kunal Wagh, a Software Engineer specializing in GenAI, LLM agents, backend systems, Python and FastAPI. Building production AI at Yardi and the backend of WheelSafar.">
+   <meta name="author" content="Kunal Wagh">
+   <meta name="theme-color" content="#0b0a10">
+   <link rel="canonical" href="https://kunal-wagh.vercel.app/">
 
-   <!-- Site Title -->
-   <title>Kunal Wagh - Portfolio</title>
+   <!-- Open Graph / Twitter -->
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://kunal-wagh.vercel.app/">
+   <meta property="og:title" content="Kunal Wagh | Software Engineer — GenAI &amp; Backend">
+   <meta property="og:description" content="Software Engineer specializing in GenAI, LLM agents and backend systems. Production AI workflows and scalable APIs with Python, FastAPI and LangGraph.">
+   <meta property="og:image" content="https://kunal-wagh.vercel.app/assets/img/hero/me.png">
+   <meta property="og:image:alt" content="Portrait of Kunal Wagh">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="Kunal Wagh | Software Engineer — GenAI &amp; Backend">
+   <meta name="twitter:description" content="Software Engineer specializing in GenAI, LLM agents and backend systems.">
+   <meta name="twitter:image" content="https://kunal-wagh.vercel.app/assets/img/hero/me.png">
 
-   <!-- Place favicon.ico in the root directory -->
+   <link rel="icon" type="image/png" href="assets/img/favicon.png">
    <link rel="apple-touch-icon" href="assets/img/favicon.png">
-   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
 
-   <!-- CSS here -->
-   <link rel="stylesheet" href="assets/css/animate.min.css">
-   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-   <link rel="stylesheet" href="assets/css/font-awesome-pro.min.css">
-   <link rel="stylesheet" href="assets/css/flaticon_gerold.css">
-   <link rel="stylesheet" href="assets/css/nice-select.css">
-   <link rel="stylesheet" href="assets/css/backToTop.css">
-   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-   <link rel="stylesheet" href="assets/css/swiper.min.css">
-   <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
-   <link rel="stylesheet" href="assets/css/magnific-popup.css">
-   <link rel="stylesheet" href="assets/css/main.css">
-   <link rel="stylesheet" href="assets/css/light-mode.css">
-   <link rel="stylesheet" href="assets/css/meanmenu.css">
-   <link rel="stylesheet" href="assets/css/responsive.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+   <link rel="stylesheet" href="assets/css/site.css">
+
+   <!-- Apply saved theme before paint -->
+   <script>
+      try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+   </script>
+
+   <script type="application/ld+json">
+   {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kunal Wagh",
+      "url": "https://kunal-wagh.vercel.app/",
+      "image": "https://kunal-wagh.vercel.app/assets/img/hero/me.png",
+      "jobTitle": "Software Engineer — GenAI & Backend",
+      "worksFor": [{ "@type": "Organization", "name": "Yardi Software India" }, { "@type": "Organization", "name": "WheelSafar Solutions" }],
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "MGM University (JNEC)" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Chhatrapati Sambhajinagar", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+      "knowsAbout": ["Generative AI", "LLM agents", "LangGraph", "LangChain", "RAG", "FastAPI", "Python", "Backend engineering", "AWS"],
+      "sameAs": ["https://www.linkedin.com/in/kunalwagh282/", "https://github.com/Kunal-Wagh282"]
+   }
+   </script>
 </head>
 
-<body class="dark-mode">
-   <!-- Preloader Area Start -->
-   <!-- <div class="preloader">
-      <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
-         <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-      </svg>
+<body>
+   <!-- Icon sprite -->
+   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 6.5h18v11H3zM3.5 7l8.5 6.5L20.5 7"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M14 3H6v18h12V7zM14 3v4h4M9 12h6M9 16h6"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/></symbol>
+   </svg>
 
-      <div class="preloader-heading">
-         <div class="load-text">
-            <span>L</span>
-            <span>o</span>
-            <span>a</span>
-            <span>d</span>
-            <span>i</span>
-            <span>n</span>
-            <span>g</span>
-         </div>
-      </div>
-   </div> -->
-   <!-- Preloader Area End -->
+   <a class="skip-link" href="#main">Skip to content</a>
 
-   <!-- start: Back To Top -->
-   <div class="progress-wrap" id="scrollUp">
-      <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
-         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
-      </svg>
-   </div>
-   <!-- end: Back To Top -->
-
-   <!-- HEADER START -->
-   <header class="tj-header-area header-absolute">
-      <div class="container">
-         <div class="row">
-            <div class="col-12 d-flex flex-wrap align-items-center">
-               <div class="logo-box">
-                  <a href="index.html">
-                     <img src="assets/img/logo/logo-dark.png" alt="">
-                  </a>
-               </div>
-               <div class="header-info-list d-none d-md-inline-block">
-                  <ul class="ul-reset">
-                     <li><a href="mailto:kunalwagh282@gmail.com">kunalwagh282@gmail.com</a></li>
-                  </ul>
-               </div>
-               <div class="header-menu" id="headerMenu">
-                  <nav>
-                     <ul>
-                        <li><a class="current-menu-item" href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <!-- <li><a href="services-light.html">Services</a></li> -->
-                        <li><a href="portfolio.html">Projects</a></li>
-                        <li><a href="index.html#resume-section">Experience</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                     </ul>
-                  </nav>
-               </div>
-               <div class="mobile-menu d-lg-none"></div>
-               <div class="header-button">
-                  <!-- <a href="#" class="btn tj-btn-primary">Hire me!</a> -->
-               </div>
-               <div class="menu-bar d-lg-none">
-                  <button>
-                     <span></span>
-                     <span></span>
-                     <span></span>
-                     <span></span>
-                  </button>
-               </div>
-            </div>
+   <!-- NAVBAR -->
+   <header class="nav" id="top">
+      <div class="container nav__inner">
+         <a href="#top" class="nav__brand" aria-label="Kunal Wagh — back to top">
+            <img src="assets/img/logo/logo-dark.png" alt="" width="36" height="36">
+            <span>Kunal Wagh</span>
+         </a>
+         <nav class="nav__links" id="navLinks" aria-label="Primary">
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#stack">Stack</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#contact">Contact</a>
+         </nav>
+         <div class="nav__actions">
+            <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light theme">
+               <svg class="icon icon--sun"><use href="#i-sun"/></svg>
+               <svg class="icon icon--moon"><use href="#i-moon"/></svg>
+            </button>
+            <a class="btn btn--sm btn--primary nav__cta" href="https://drive.google.com/drive/folders/1rIMPh-4oaZP5ARAqN5UNm5HF-CdF3_22?usp=sharing" target="_blank" rel="noopener">Resume</a>
+            <button class="icon-btn nav__burger" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+               <span></span><span></span>
+            </button>
          </div>
       </div>
    </header>
-   <header class="tj-header-area header-2 header-sticky sticky-out">
-      <div class="container">
-         <div class="row">
-            <div class="col-12 d-flex flex-wrap align-items-center">
-               <div class="logo-box">
-                  <a href="index.html">
-                     <img src="assets/img/logo/logo-dark.png" alt="">
-                  </a>
+
+   <main id="main">
+
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+         <div class="container hero__grid">
+            <div class="hero__copy">
+               <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span> Open to AI engineering roles</p>
+               <h1 id="hero-title" class="hero__title reveal">
+                  <span class="hero__name">Kunal Wagh</span>
+                  <span class="hero__role">Software Engineer</span>
+               </h1>
+               <p class="hero__focus reveal">GenAI <i>•</i> LLM Agents <i>•</i> Backend Systems</p>
+               <p class="hero__lead reveal">
+                  I build production-grade AI workflows and scalable APIs with Python, FastAPI, LangGraph and modern LLM tooling — currently on conversational AI at <strong>Yardi</strong> and the backend of <strong>WheelSafar</strong>.
+               </p>
+               <div class="hero__ctas reveal">
+                  <a class="btn btn--primary" href="#projects">View projects <svg class="icon"><use href="#i-arrow"/></svg></a>
+                  <a class="btn btn--ghost" href="https://drive.google.com/drive/folders/1rIMPh-4oaZP5ARAqN5UNm5HF-CdF3_22?usp=sharing" target="_blank" rel="noopener"><svg class="icon"><use href="#i-file"/></svg> Resume</a>
+                  <a class="icon-btn icon-btn--lg" href="https://github.com/Kunal-Wagh282" target="_blank" rel="noopener" aria-label="GitHub profile"><svg class="icon"><use href="#i-github"/></svg></a>
+                  <a class="icon-btn icon-btn--lg" href="https://www.linkedin.com/in/kunalwagh282/" target="_blank" rel="noopener" aria-label="LinkedIn profile"><svg class="icon"><use href="#i-linkedin"/></svg></a>
                </div>
-               <div class="header-info-list d-none d-md-inline-block">
-                  <ul class="ul-reset">
-                     <li><a href="mailto:kunalwagh282@gmail.com">kunalwagh282@gmail.com</a></li>
-                  </ul>
+               <p class="hero__tagline reveal">Building intelligent systems that move from prototype to production.</p>
+            </div>
+            <div class="hero__visual reveal">
+               <div class="portrait">
+                  <img src="assets/img/hero/me.webp" alt="Kunal Wagh" width="437" height="475" fetchpriority="high">
                </div>
-               <div class="header-menu">
-                  <nav>
-                     <ul>
-                        <li><a class="current-menu-item" href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <!-- <li><a href="services-light.html">Services</a></li> -->
-                        <li><a href="portfolio.html">Projects</a></li>
-                        <li><a href="index.html#resume-section">Experience</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                     </ul>
-                  </nav>
-               </div>
-               <div class="mobile-menu d-lg-none"></div>
-               <div class="header-button">
-                  <!-- <a href="#" class="btn tj-btn-primary">Hire me!</a> -->
-               </div>
-               <div class="menu-bar d-lg-none">
-                  <button>
-                     <span></span>
-                     <span></span>
-                     <span></span>
-                     <span></span>
-                  </button>
+               <div class="terminal" aria-hidden="true">
+                  <div class="terminal__bar"><span></span><span></span><span></span></div>
+<pre><span class="t-mute">$</span> whoami
+<span class="t-key">role</span>    = <span class="t-str">"Software Engineer"</span>
+<span class="t-key">focus</span>   = [<span class="t-str">"LLM agents"</span>, <span class="t-str">"RAG"</span>, <span class="t-str">"APIs"</span>]
+<span class="t-key">ships</span>   = <span class="t-str">"to production"</span></pre>
                </div>
             </div>
          </div>
-      </div>
-   </header>
-   <!-- HEADER END -->
 
-   <main class="site-content" id="content">
-      <!-- HERO SECTION START -->
-      <section class="hero-section d-flex align-items-center" id="intro">
-         <div class="intro_text">
-            <svg viewbox="0 0 1320 300">
-               <text x="50%" y="50%" text-anchor="middle">HI</text>
-            </svg>
-         </div>
+         <!-- IMPACT STATS -->
          <div class="container">
-            <div class="row align-items-center">
-               <div class="col-md-6">
-                  <div class="hero-content-box">
-                     <span class="hero-sub-title">I am Kunal</span>
-                     <h1 class="hero-title">AI/ML Software Engineer<br>Backend &amp; GenAI Developer</h1>
+            <dl class="stats reveal">
+               <div class="stat">
+                  <dt class="stat__label">Production software engineering</dt>
+                  <dd class="stat__value"><span data-count="1.5" data-decimals="1">1.5</span>+ yrs</dd>
+               </div>
+               <div class="stat">
+                  <dt class="stat__label">Production REST APIs built at WheelSafar</dt>
+                  <dd class="stat__value"><span data-count="60">60</span>+</dd>
+               </div>
+               <div class="stat">
+                  <dt class="stat__label">Software &amp; AI projects shipped</dt>
+                  <dd class="stat__value"><span data-count="20">20</span>+</dd>
+               </div>
+               <div class="stat">
+                  <dt class="stat__label">Google Solution Challenge 2024</dt>
+                  <dd class="stat__value">Top 100</dd>
+               </div>
+            </dl>
+         </div>
+      </section>
 
-                     <div class="hero-image-box d-md-none text-center">
-                        <img src="assets/img/hero/me.png" alt="">
+      <!-- WHAT I BUILD -->
+      <section class="section" id="build" aria-labelledby="build-title">
+         <div class="container">
+            <header class="section__head reveal">
+               <p class="kicker">01 — What I build</p>
+               <h2 id="build-title">AI that lives inside real software.</h2>
+            </header>
+            <div class="build-grid">
+               <article class="card reveal">
+                  <span class="card__num">LLM</span>
+                  <h3>GenAI &amp; LLM systems</h3>
+                  <p>Agent workflows, RAG, tool calling and context management for LLM applications that answer real users.</p>
+               </article>
+               <article class="card reveal">
+                  <span class="card__num">API</span>
+                  <h3>Backend engineering</h3>
+                  <p>Async Python services, clean REST APIs, database-backed systems and real-time features with WebSockets.</p>
+               </article>
+               <article class="card reveal">
+                  <span class="card__num">PRD</span>
+                  <h3>AI products</h3>
+                  <p>Turning a business problem into a working AI feature — not a demo that only runs on localhost.</p>
+               </article>
+               <article class="card reveal">
+                  <span class="card__num">OPS</span>
+                  <h3>Production engineering</h3>
+                  <p>Docker, AWS, CI/CD, logging, health checks and LLM tracing — the parts that keep it running.</p>
+               </article>
+            </div>
+         </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section section--alt" id="experience" aria-labelledby="exp-title">
+         <div class="container">
+            <header class="section__head reveal">
+               <p class="kicker">02 — Experience</p>
+               <h2 id="exp-title">Where I've shipped.</h2>
+            </header>
+
+            <ol class="timeline">
+               <!-- Yardi -->
+               <li class="job reveal">
+                  <div class="job__meta">
+                     <p class="job__date">Jan 2025 — Present</p>
+                  </div>
+                  <div class="job__body">
+                     <h3 class="job__title">ML Software Engineer <span class="job__at">@ Yardi Software India</span></h3>
+                     <ul class="job__roles" aria-label="Roles at Yardi">
+                        <li><b>ML Software Engineer</b> · Jan 2026 — Present</li>
+                        <li>ML Software Engineer Trainee · Jul 2025 — Jan 2026</li>
+                        <li>ML Software Engineer Intern · Jan 2025 — Jul 2025</li>
+                     </ul>
+                     <p class="job__summary">Working on <strong>ChatIQ</strong>, a production conversational-AI platform for property management.</p>
+                     <ul class="job__points">
+                        <li>Build and extend production LLM agent workflows that handle live resident and prospect conversations.</li>
+                        <li>Develop agent tools for availability, tour scheduling, rent, maintenance and property-policy questions.</li>
+                        <li>Implement tool gating, property-specific configuration, context resolution and error handling in agent flows.</li>
+                        <li>Develop and maintain FastAPI services and integrations behind the assistant.</li>
+                        <li>Debug in production through logs and LLM tracing; harden reliability with health checks and CI quality gates.</li>
+                     </ul>
+                     <ul class="chips" aria-label="Technologies">
+                        <li>Python</li><li>FastAPI</li><li>LangGraph</li><li>LangChain</li><li>LlamaIndex</li><li>OpenAI</li><li>Redis</li><li>NATS</li><li>MSSQL</li><li>Docker</li><li>GitHub Actions</li><li>Kibana</li><li>Phoenix</li>
+                     </ul>
+                  </div>
+               </li>
+
+               <!-- WheelSafar -->
+               <li class="job reveal">
+                  <div class="job__meta">
+                     <p class="job__date">Mar 2026 — Present</p>
+                  </div>
+                  <div class="job__body">
+                     <h3 class="job__title">Backend Engineer <span class="job__at">@ WheelSafar Solutions</span></h3>
+                     <p class="job__summary">Built and maintain the production backend powering a live mobility platform.</p>
+                     <ul class="job__points">
+                        <li>Designed and shipped 60+ REST APIs in FastAPI covering the full ride lifecycle, users, rewards and discovery.</li>
+                        <li>Built real-time live tracking over WebSockets and push notifications through FCM.</li>
+                        <li>Implemented geospatial discovery and saved routes on PostgreSQL, with Redis for hot paths.</li>
+                        <li>Run the platform on AWS — EC2 behind an ALB, RDS, S3, EventBridge jobs, SSM config and CloudWatch monitoring — in Docker.</li>
+                     </ul>
+                     <ul class="chips" aria-label="Technologies">
+                        <li>FastAPI</li><li>SQLAlchemy</li><li>PostgreSQL</li><li>Redis</li><li>WebSockets</li><li>Docker</li><li>AWS EC2</li><li>RDS</li><li>ALB</li><li>S3</li><li>EventBridge</li><li>CloudWatch</li><li>FCM</li>
+                     </ul>
+                  </div>
+               </li>
+            </ol>
+
+            <details class="earlier reveal">
+               <summary>Earlier experience &amp; leadership <svg class="icon"><use href="#i-down"/></svg></summary>
+               <ul class="earlier__list">
+                  <li><span>AIML Developer</span><span>YUG-E-VISUALS</span><time>Aug 2024 — Dec 2024</time></li>
+                  <li><span>GenAI Intern</span><span>Cognizant Digital Solutions</span><time>Jun 2024 — Jul 2024</time></li>
+                  <li><span>AI-ML Trainee</span><span>Versatile Technology</span><time>Aug 2023 — Oct 2023</time></li>
+                  <li><span>Chairperson</span><span>GeeksforGeeks Student Chapter, MGMU</span><time>Jul 2024 — Jun 2025</time></li>
+                  <li><span>Student Head Coordinator</span><span>National Service Scheme</span><time>Aug 2021 — Jun 2025</time></li>
+               </ul>
+            </details>
+         </div>
+      </section>
+
+      <!-- FEATURED PROJECTS -->
+      <section class="section" id="projects" aria-labelledby="proj-title">
+         <div class="container">
+            <header class="section__head reveal">
+               <p class="kicker">03 — Featured work</p>
+               <h2 id="proj-title">Systems, not notebooks.</h2>
+            </header>
+
+            <!-- 01 ChatIQ -->
+            <article class="case case--hero reveal" id="chatiq">
+               <div class="case__head">
+                  <p class="case__index">01</p>
+                  <div>
+                     <p class="case__type">Production LLM agent platform · Yardi</p>
+                     <h3 class="case__title">ChatIQ</h3>
+                  </div>
+                  <span class="badge badge--live">In production</span>
+               </div>
+               <div class="case__grid">
+                  <div class="case__story">
+                     <div class="case__block">
+                        <h4>Problem</h4>
+                        <p>Property teams field a constant stream of the same questions — what's available, can I tour, what's the rent, who fixes my sink. Answers depend on each property's own data and rules.</p>
                      </div>
-
-                     <p class="lead">
-                        Software engineer focused on AI, backend systems, GenAI workflows, and production APIs. I build LLM-powered products, scalable FastAPI services, and applied ML solutions across enterprise and mobility platforms.
-                     </p>
-                     <div class="button-box d-flex flex-wrap align-items-center">
-                        <a href="https://drive.google.com/drive/folders/1rIMPh-4oaZP5ARAqN5UNm5HF-CdF3_22?usp=sharing" target="_blank" class="btn tj-btn-secondary">Download CV <i class="flaticon-download"></i></a>
-                        <ul class="ul-reset social-icons">
-                           <li>
-                              <a href="https://www.linkedin.com/in/kunalwagh282/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-                           </li>
-                           <li>
-                              <a href="https://github.com/Kunal-Wagh282" target="_blank"><i class="fa-brands fa-github"></i></a>
-                           </li>
-                           <li>
-                              <a href="https://www.instagram.com/__kunal.wagh__/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                           </li>
+                     <div class="case__block">
+                        <h4>What I contribute</h4>
+                        <ul>
+                           <li>Agent workflows and domain tools (availability, tours, rent, maintenance, policy).</li>
+                           <li>Tool gating and per-property configuration so the agent only does what a property allows.</li>
+                           <li>Context resolution and graceful error handling when tools or data fail.</li>
+                           <li>FastAPI services, integrations, health checks and CI quality checks.</li>
                         </ul>
                      </div>
-                  </div>
-               </div>
-               <div class="col-md-6 d-none d-md-block">
-                  <div class="hero-image-box text-center">
-                     <img src="assets/img/hero/me.png" alt="">
-                  </div>
-               </div>
-            </div>
-
-            <div class="funfact-area">
-               <div class="row">
-                  <!-- <div class="col-6 col-lg-3">
-                     <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
-                        <div class="number"><span class="odometer" data-count="14">0</span></div>
-                        <div class="text">Years of <br>Experience</div>
+                     <div class="case__block">
+                        <h4>Engineering challenges</h4>
+                        <p>Keeping a non-deterministic agent predictable: scoping which tools can run, resolving ambiguous context across turns, and tracing failures through logs and LLM traces in production.</p>
                      </div>
-                  </div> -->
-                  <div class="col-6 col-lg-3">
-                     <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
-                        <div class="number"><span class="odometer" data-count="20">20</span>+</div>
-                        <div class="text">Projects <br>Completed</div>
-                     </div>
-                  </div>
-                  <!-- <div class="col-6 col-lg-3">
-                     <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
-                        <div class="number"><span class="odometer" data-count="1.5">0</span>K</div>
-                        <div class="text">Happy <br>Clients</div>
-                     </div>
-                  </div> -->
-                  <!-- <div class="col-6 col-lg-3">
-                     <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
-                        <div class="number"><span class="odometer" data-count="14">0</span></div>
-                        <div class="text">Years of <br>Experience</div>
-                     </div>
-                  </div> -->
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- HERO SECTION END -->
-
-      <!-- SERVICES SECTION START -->
-      <section class="services-section" id="services-section">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="section-header text-center">
-                     <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">Achievements & Awards</h2>
-                     <p class="wow fadeInUp" data-wow-delay=".4s">
-                        Recognitions earned through applied engineering, healthcare innovation, and student leadership.
-                     </p>
-                  </div>
-               </div>
-            </div>
-
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="services-widget position-relative">
-                     <div class="service-item current d-flex flex-wrap align-items-center wow fadeInUp" data-wow-delay=".5s">
-                        <div class="left-box d-flex flex-wrap align-items-center">
-                           <!-- <span class="number">01</span> -->
-                           <h3 class="service-title">Global Top 100</h3>
-                           <h3 class="service-title">Google Solution Challenge 2024</h3>
-                        </div>
-                        <div class="right-box">
-                           <p>
-                              Built a healthcare innovation that placed among the global top 100 solutions.
-                           </p>
-                        </div>
-                        <i class="flaticon-up-right-arrow"></i>
-                        <button data-mfp-src="#service-wrapper" class="service-link modal-popup"></button>
-                     </div>
-                     <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp" data-wow-delay=".6s">
-                        <div class="left-box d-flex flex-wrap align-items-center">
-                           <!-- <span class="number">02</span> -->
-                           <h3 class="service-title">Winner, Cognizant</h3>
-                           <h3 class="service-title">Digital Nurture Technoverse 2023</h3>
-                        </div>
-                        <div class="right-box">
-                           <p>
-                              Won the hackathon and earned an internship opportunity through the competition.
-                           </p>
-                        </div>
-                        <i class="flaticon-up-right-arrow"></i>
-                        <button data-mfp-src="#service-wrapper2" class="service-link modal-popup"></button>
-                     </div>
-                     <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp" data-wow-delay=".7s">
-                        <div class="left-box d-flex flex-wrap align-items-center">
-                           <!-- <span class="number">03</span> -->
-                           <h4 class="service-title">Runner-Up</h4>
-                           <h3 class="service-title">Young Indians Innovation (YII IDS3 CII)</h3>
-                        </div>
-                        <div class="right-box">
-                           <p>
-                              Secured national runner-up with INR 100,000 award for a healthcare prototype.
-                           </p>
-                        </div>
-                        <i class="flaticon-up-right-arrow"></i>
-                        <button data-mfp-src="#service-wrapper3" class="service-link modal-popup"></button>
-                     </div>
-                     <div class="service-item d-flex flex-wrap align-items-center wow fadeInUp" data-wow-delay=".8s">
-                        <div class="left-box d-flex flex-wrap align-items-center">
-                           <!-- <span class="number">04</span> -->
-                           <h3 class="service-title">National Level Badminton</h3>
-                        </div>
-                        <div class="right-box">
-                           <p>
-                              Represented MGM University in national-level badminton competition.
-                           </p>
-                        </div>
-                        <i class="flaticon-up-right-arrow"></i>
-                        <button data-mfp-src="" class="service-link modal-popup"></button>
-                     </div>
-                     <div class="active-bg wow fadeInUp" data-wow-delay=".5s"></div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- SERVICES SECTION END -->
-
-      <!-- start:Google Service Popup -->
-         <div id="service-wrapper" class="popup_content_area zoom-anim-dialog mfp-hide" data-lenis-prevent="">
-         <div class="popup_modal_img">
-            <img src="assets/img/services/11.jpg" alt="">
-         </div>
-
-         <div class="popup_modal_content">
-            <div class="service_details">
-               <div class="row">
-                  <div class="col-lg-7 col-xl-8">
-                     <div class="service_details_content">
-                        <div class="service_info">
-                           <!-- <h6 class="subtitle">SERVICES</h6> -->
-                           <h2 class="title">Google Solution Challenge 2024</h2>
-                           <div class="desc">
-                              <p>
-                                 Reached the global top 100 in Google Solution Challenge 2024 for the Lung Capacity
-                                 Enhancer, an IoT healthcare solution supporting pulmonary exercise and measurable
-                                 breathing improvement.
-                              </p>
-                           </div>
-
-                           <h3 class="title">Skills Utilized</h3>
-                           <ul>
-                              <li>IOT</li>
-                              <li>ReactJS</li>
-                              <li>Google Cloud</li>
-                              <li>Arduino C Programming</li>
-                              <li>Hardware designing</li>
-                              <li>Healthcare Research</li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-5 col-xl-4">
-                     <div class="tj_main_sidebar">
-                        <div class="sidebar_widget services_list">
-                           <div class="widget_title">
-                              <h3 class="title">Visit the Linkedin Post</h3>
-                           </div>
-                           <ul>
-                              <li>
-                                 <button onclick="window.open('https://www.linkedin.com/posts/kunalwagh282_googlesolutionchallenge-gdsc-top100-activity-7182750470279483392-Mu4D?utm_source=share&utm_medium=member_desktop', '_blank')">
-                                    <i class="flaticon-design"></i>
-                                    Global Top 100 post!
-                                 </button>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end:Google Service Popup -->
-
-      <!-- start:Cognizant Service Popup -->
-      <div id="service-wrapper2" class="popup_content_area zoom-anim-dialog mfp-hide" data-lenis-prevent="">
-         <div class="portfolio_gallery owl-carousel">
-            <div class="gallery_item">
-               <img src="assets/img/services/2.1.jpg" alt="">
-            </div>
-            <div class="gallery_item">
-               <img src="assets/img/services/2.2.jpg" alt="">
-            </div>
-            <div class="gallery_item">
-               <img src="assets/img/services/2.4.jpg" alt="">
-            </div>
-         </div>
-
-         <div class="popup_modal_content">
-            <div class="service_details">
-               <div class="row">
-                  <div class="col-lg-7 col-xl-8">
-                     <div class="service_details_content">
-                        <div class="service_info">
-                           <!-- <h6 class="subtitle">SERVICES</h6> -->
-                           <h2 class="title">Digital Nurture Technoverse 2023</h2>
-                           <div class="desc">
-                              <p>
-                                 Won Cognizant Digital Nurture Technoverse 2023 by presenting a practical healthcare
-                                 technology prototype. The achievement led to recognition, a trophy, and an internship
-                                 opportunity.
-                              </p>
-                           </div>
-
-                           <h3 class="title">Skills Utilized</h3>
-                           <ul>
-                              <li>IOT</li>
-                              <li>ReactJS</li>
-                              <li>Arduino C Programming</li>
-                              <li>Hardware designing</li>
-                              <li>Healthcare Research</li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-5 col-xl-4">
-                     <div class="tj_main_sidebar">
-                        <div class="sidebar_widget services_list">
-                           <div class="widget_title">
-                              <h3 class="title">Visit the Linkedin Post</h3>
-                           </div>
-                           <ul>
-                              <li>
-                                 <button onclick="window.open('https://www.linkedin.com/posts/kunalwagh282_cognizant-technoverse2023champions-hackathon-activity-7175937535871762433-R9rG?utm_source=share&utm_medium=member_desktop', '_blank')">
-                                    <i class="flaticon-design"></i>
-                                    Technoverse 2023 winner post
-                                 </button>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end:Cognizant Service Popup -->
-
-      <!-- start:YII Service Popup -->
-      <div id="service-wrapper3" class="popup_content_area zoom-anim-dialog mfp-hide" data-lenis-prevent="">
-         <div class="popup_modal_img">
-            <img src="assets/img/services/3.jpg" alt="" style="height: fit-content;">
-         </div>
-
-         <div class="popup_modal_content">
-            <div class="service_details">
-               <div class="row">
-                  <div class="col-lg-7 col-xl-8">
-                     <div class="service_details_content">
-                        <div class="service_info">
-                           <!-- <h6 class="subtitle">SERVICES</h6> -->
-                           <h2 class="title">Young Indians Innovation (YII IDS3 CII)</h2>
-                           <div class="desc">
-                              <p>
-                                 Secured national runner-up at Young Indians Innovation IDS3 by building and validating
-                                 a healthcare MVP. The project combined hardware, user research, and prototype testing,
-                                 and received an INR 100,000 award.
-                              </p>
-                           </div>
-
-                           <h3 class="title">Skills Utilized</h3>
-
-                           <ul>
-                              <li>IOT</li>
-                              <li>Arduino C Programming</li>
-                              <li>Hardware designing</li>
-                              <li>Healthcare Research</li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-5 col-xl-4">
-                     <div class="tj_main_sidebar">
-                        <div class="sidebar_widget services_list">
-                           <div class="widget_title">
-                              <h3 class="title">Visit the Linkedin Post</h3>
-                           </div>
-                           <ul>
-                              <li>
-                                 <button onclick="window.open('https://www.linkedin.com/posts/kunalwagh282_innovation-healthcare-pediatriccare-activity-7149396875194920961-854S?utm_source=share&utm_medium=member_desktop', '_blank')">
-                                    <i class="flaticon-design"></i>
-                                    Runner-Up post!
-                                 </button>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end:YII Service Popup -->
-
-      <!-- PORTFOLIO SECTION START -->
-      <section class="portfolio-section" id="works-section">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="section-header text-center">
-                     <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">My Recent Works</h2>
-                     <p class="wow fadeInUp" data-wow-delay=".4s">
-                        I channel my passion and ideas into innovative AI and automation projects that inspire and drive impactful results.
-                     </p>
-                  </div>
-               </div>
-            </div>
-
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="portfolio-filter text-center wow fadeInUp" data-wow-delay=".5s">
-                     <div class="button-group filter-button-group">
-                        <button data-filter="*" class="active">All</button>
-                        <button data-filter=".AIML">AI/ML</button>
-                        <button data-filter=".GENAI">GenAI</button>
-                        <button data-filter=".IOT">IoT</button>
-                        <button data-filter=".WEBDEV">Web</button>
-                        <div class="active-bg"></div>
-                     </div>
-                  </div>
-
-                  <div class="portfolio-box wow fadeInUp" data-wow-delay=".6s">
-                     <div class="portfolio-sizer"></div>
-                     <div class="gutter-sizer"></div>
-                     <div class="portfolio-item AIML">
-                        <div class="image-box">
-                           <img src="assets/img/portfolio/devnagiri-sign-language.png" alt="">
-                        </div>
-                        <div class="content-box">
-                           <h3 class="portfolio-title">Devnagiri Sign Language Recognition</h3>
-                           <p>47-class MediaPipe and ML/DL recognition system with real-time inference.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <button onclick="window.open('https://github.com/Kunal-Wagh282/DevNagri-Sign-Language-Detection', '_blank')" class="portfolio-link"></button>
-                        </div>
-                     </div>
-
-
-                     <div class="portfolio-item AIML">
-                        <div class="image-box">
-                           <img src="assets/img/portfolio/face-recognition-attendance.png" alt="">
-                        </div>
-                        <div class="content-box">
-                           <h3 class="portfolio-title">Face Recognition Attendance System</h3>
-                           <p>Python, OpenCV, Tkinter, and MySQL system for contactless attendance tracking.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <button onclick="window.open('https://github.com/Kunal-Wagh282/AMS_Face_Recognition', '_blank')" class="portfolio-link"></button>
-                        </div>
-                     </div>
-
-
-                     <div class="portfolio-item GENAI">
-                        <div class="image-box">
-                           <img src="assets/img/portfolio/genai-rag-voice-assistant.png" alt="">
-                        </div>
-                        <div class="content-box">
-                           <h3 class="portfolio-title">Natural Language Vendor Assistant</h3>
-                           <p>TensorFlow NLP chatbot collection with Python CLI and Django web interface.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <button onclick="window.open('https://github.com/Kunal-Wagh282/ML-Natural-Language-Vendor-Assistant-Internship', '_blank')" class="portfolio-link"></button>
-                        </div>
-                     </div>
-
-
-                     <div class="portfolio-item AIML">
-                        <div class="image-box">
-                           <img src="assets/img/portfolio/happy-sad-image-classifier.png" alt="">
-                        </div>
-                        <div class="content-box">
-                           <h3 class="portfolio-title">Happy/Sad Image Classifier</h3>
-                           <p>CNN emotion classifier using TensorFlow, OpenCV, and 305 labeled images.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <button onclick="window.open('https://github.com/Kunal-Wagh282/Happy_Sad_Image__Classifier', '_blank')" class="portfolio-link"></button>
-                        </div>
-                     </div>
-
-
-                     <div class="portfolio-item AIML">
-                        <div class="image-box">
-                           <img src="assets/img/portfolio/titanic-survival-analysis.png" alt="">
-                        </div>
-                        <div class="content-box">
-                           <h3 class="portfolio-title">Titanic Survival Analysis</h3>
-                           <p>Logistic regression model analyzing passenger survival factors and predictions.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <button onclick="window.open('https://github.com/Kunal-Wagh282/Titanic_Dataset_Logistic_Regression', '_blank')" class="portfolio-link"></button>
-                        </div>
-                     </div>
-
-
-                     <div class="portfolio-item IOT WEBDEV">
-                        <div class="image-box">
-                           <img src="assets/img/portfolio/lung-capacity-enhancer.png" alt="">
-                        </div>
-                        <div class="content-box">
-                           <h3 class="portfolio-title">Lung Capacity Enhancer</h3>
-                           <p>IoT healthcare MVP using Arduino, React, and Django REST Framework.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <button onclick="window.open('https://github.com/Kunal-Wagh282/Lung_Capacity_Enhancer-GDSC-Repo-', '_blank')" class="portfolio-link"></button>
-                        </div>
-                     </div>
-
-
-                     <div class="portfolio-item IOT">
-                        <div class="image-box">
-                           <img src="assets/img/portfolio/udumutthu-vr-rehab-game.png" alt="">
-                        </div>
-                        <div class="content-box">
-                           <h3 class="portfolio-title">Udumutthu VR Rehab Game</h3>
-                           <p>MetaQuest 2 VR game with Arduino pressure sensors for pediatric pulmonary rehab.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <button onclick="window.open('https://github.com/Kunal-Wagh282/Blow-the-seeds-Udumutthu-', '_blank')" class="portfolio-link"></button>
-                        </div>
-                     </div>
-
-
-                     <div class="portfolio-item WEBDEV">
-                        <div class="image-box">
-                           <img src="assets/img/portfolio/expodash.png" alt="">
-                        </div>
-                        <div class="content-box">
-                           <h3 class="portfolio-title">ExpoDash</h3>
-                           <p>Exhibition dashboard platform for event workflows, analytics, and management.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <button onclick="window.open('https://www.expodash.com', '_blank')" class="portfolio-link"></button>
-                        </div>
-                     </div>
-
-
-                     <div class="portfolio-item WEBDEV">
-                        <div class="image-box">
-                           <img src="assets/img/portfolio/cafe-karma.png" alt="">
-                        </div>
-                        <div class="content-box">
-                           <h3 class="portfolio-title">Cafe Karma</h3>
-                           <p>Web platform for cafe discovery with a clean, production-ready interface.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <button onclick="window.open('https://github.com/Kunal-Wagh282/Cafe-Karma', '_blank')" class="portfolio-link"></button>
-                        </div>
-                     </div>
-
-
-                     <div class="portfolio-item WEBDEV">
-                        <div class="image-box">
-                           <img src="assets/img/portfolio/cafe-querator.png" alt="">
-                        </div>
-                        <div class="content-box">
-                           <h3 class="portfolio-title">Cafe Querator</h3>
-                           <p>Spotify-powered cafe music dashboard with table song requests and live queue.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <button onclick="window.open('https://github.com/Kunal-Wagh282/Cafe_Querator_Vercel', '_blank')" class="portfolio-link"></button>
-                        </div>
-                     </div>
-
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- PORTFOLIO SECTION END -->
-
-      <!-- RESUME SECTION START -->
-      <section class="resume-section" id="resume-section">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="section-header wow fadeInUp" data-wow-delay=".3s">
-                     <h2 class="section-title"><i class="flaticon-recommendation"></i> My Experience</h2>
-                  </div>
-
-                  <div class="resume-widget">
-                     <div class="resume-item wow fadeInLeft" data-wow-delay=".4s">
-                        <div class="time">Jan 2026 - Present</div>
-                        <h3 class="resume-title">ML Software Engineer</h3>
-                        <div class="institute">Yardi Software India Pvt Ltd</div>
-                     </div>
-                     <div class="resume-item wow fadeInLeft" data-wow-delay=".4s">
-                        <div class="time">March 2026 - Present</div>
-                        <h3 class="resume-title">Backend Engineer</h3>
-                        <div class="institute">WheelSafar Solutions Pvt. Ltd.</div>
-                     </div>
-                     <div class="resume-item wow fadeInLeft" data-wow-delay=".5s">
-                        <div class="time">July 2025 - Jan 2026</div>
-                        <h3 class="resume-title">ML Software Engineer Trainee</h3>
-                        <div class="institute">Yardi Software India Pvt Ltd</div>
-                     </div>
-                     <div class="resume-item wow fadeInLeft" data-wow-delay=".6s">
-                        <div class="time">Jan 2025 - July 2025</div>
-                        <h3 class="resume-title">ML Software Engineer Intern</h3>
-                        <div class="institute">Yardi Software India Pvt Ltd</div>
-                     </div>
-                     <div class="resume-item wow fadeInLeft" data-wow-delay=".7s">
-                        <div class="time">June 2024 - July 2024</div>
-                        <h3 class="resume-title">GenAI Intern</h3>
-                        <div class="institute">Cognizant Digital Solutions</div>
-                     </div>
-                     <div class="resume-item wow fadeInLeft" data-wow-delay=".8s">
-                        <div class="time">Aug 2024 - Dec 2024</div>
-                        <h3 class="resume-title">AIML Developer</h3>
-                        <div class="institute">YUG-E-VISUALS</div>
-                     </div>
-                     <div class="resume-item wow fadeInLeft" data-wow-delay=".9s">
-                        <div class="time">Aug 2023 - Oct 2023</div>
-                        <h3 class="resume-title">AI-ML Trainee</h3>
-                        <div class="institute">Versatile Technology</div>
-                     </div>
-                     <div class="resume-item wow fadeInLeft" data-wow-delay="1s">
-                        <div class="time">July 2024 - June 2025</div>
-                        <h3 class="resume-title">Chairperson</h3>
-                        <div class="institute">GeeksforGeeks MGMU</div>
-                     </div>
-                     <div class="resume-item wow fadeInLeft" data-wow-delay="1.1s">
-                        <div class="time">Aug 2021 - June 2025</div>
-                        <h3 class="resume-title">Student Head Coordinator</h3>
-                        <div class="institute">National Service Scheme</div>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="col-md-6">
-                  <div class="section-header wow fadeInUp" data-wow-delay=".4s">
-                     <h2 class="section-title"><i class="flaticon-graduation-cap"></i> My Education</h2>
-                  </div>
-
-                  <div class="resume-widget">
-                     <div class="resume-item wow fadeInRight" data-wow-delay=".5s">
-                        <div class="time">2021 - 2025</div>
-                        <h3 class="resume-title">Computer Science Engineering, B.Tech</h3>
-                        <div class="institute">JNEC, MGM University</div>
-                     </div>
-                     <div class="resume-item wow fadeInRight" data-wow-delay=".6s">
-                        <div class="time">2021 - 2025</div>
-                        <h3 class="resume-title">Data Science, Honours</h3>
-                        <div class="institute">JNEC, MGM University</div>
-                     </div>
-                     <div class="resume-item wow fadeInRight" data-wow-delay=".7s">
-                        <div class="time">2020 - 2021</div>
-                        <h3 class="resume-title">HSC</h3>
-                        <div class="institute">Vidyadham Science College</div>
-                     </div>
-                     <div class="resume-item wow fadeInRight" data-wow-delay=".8s">
-                        <div class="time">2019 - 2020</div>
-                        <h3 class="resume-title">SSC</h3>
-                        <div class="institute">Podar Int. School, ICSE</div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- RESUME SECTION END -->
-
-      <!-- SKILLS SECTION START -->
-      <section class="skills-section" id="skills-section">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="section-header text-center">
-                     <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">My Skills</h2>
-                     <!-- <p class="wow fadeInUp" data-wow-delay=".4s">
-                        We put your ideas and thus your wishes in the form of a unique web project that inspires you and
-                        you customers.
-                     </p> -->
-                  </div>
-               </div>
-            </div>
-
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="skills-widget d-flex flex-wrap justify-content-center align-items-center">
-                     <div class="skill-item wow fadeInUp" data-wow-delay=".3s">
-                        <div class="skill-inner">
-                           <div class="icon-box">
-                              <img src="assets/img/icons/figma.svg" alt="">
-                           </div>
-                           <div class="number">Core</div>
-                        </div>
-                        <p>Languages: Python, C, C#, JavaScript</p>
-                     </div>
-                     <div class="skill-item wow fadeInUp" data-wow-delay=".4s">
-                        <div class="skill-inner">
-                           <div class="icon-box">
-                              <img src="assets/img/icons/sketch.svg" alt="">
-                           </div>
-                           <div class="number">AI/ML</div>
-                        </div>
-                        <p>TensorFlow, OpenCV, MediaPipe, scikit-learn</p>
-                     </div>
-                     <div class="skill-item wow fadeInUp" data-wow-delay=".5s">
-                        <div class="skill-inner">
-                           <div class="icon-box">
-                              <img src="assets/img/icons/xd.svg" alt="">
-                           </div>
-                           <div class="number">Backend</div>
-                        </div>
-                        <p>FastAPI, Django REST Framework, MySQL</p>
-                     </div>
-                     <div class="skill-item wow fadeInUp" data-wow-delay=".6s">
-                        <div class="skill-inner">
-                           <div class="icon-box">
-                              <img src="assets/img/icons/wp.svg" alt="">
-                           </div>
-                           <div class="number">Tools</div>
-                        </div>
-                        <p>GitHub, Google Cloud, Arduino</p>
-                     </div>
-                     <div class="skill-item wow fadeInUp" data-wow-delay=".7s">
-                        <div class="skill-inner">
-                           <div class="icon-box">
-                              <img src="assets/img/icons/react.svg" alt="">
-                           </div>
-                           <div class="number">Frontend</div>
-                        </div>
-                        <p>React, JavaScript, responsive UI</p>
-                     </div>
-                     <div class="skill-item wow fadeInUp" data-wow-delay=".8s">
-                        <div class="skill-inner">
-                           <div class="icon-box">
-                              <img src="assets/img/icons/js.svg" alt="">
-                           </div>
-                           <div class="number">IoT</div>
-                        </div>
-                        <p>Arduino C, sensors, healthcare prototypes</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- SKILLS SECTION END -->
-
-      <!-- TESTIMONIAL SECTION START -->
-      <!-- <section class="testimonial-section" id="testimonials-section">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-5">
-                  <div class="section-header">
-                     <h2 class="section-title wow fadeInLeft" data-wow-delay=".3s">My Client's Stories</h2>
-                     <p class="wow fadeInLeft" data-wow-delay=".4s">Empowering people in new a digital journey with my
-                        super services</p>
-                  </div>
-               </div>
-
-               <div class="col-lg-7 col-xl-6 offset-xl-1">
-                  <div class="testimonials-widget wow fadeInRight" data-wow-delay=".5s">
-                     <div class="owl-carousel testimonial-carousel">
-                        <div class="testimonial-item">
-                           <div class="top-area d-flex flex-wrap justify-content-between">
-                              <div class="logo-box">
-                                 <img src="assets/img/testimonials/logo/1-dark.png" alt="">
-                              </div>
-                              <div class="image-box">
-                                 <img src="assets/img/testimonials/user/1.jpg" alt="">
-                              </div>
-                           </div>
-                           <div class="icon-box">
-                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint0_linear_263_588)"></path>
-                                 <defs>
-                                    <lineargradient id="paint0_linear_263_588" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                    </lineargradient>
-                                 </defs>
-                              </svg>
-                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint1_linear_263_589)"></path>
-                                 <defs>
-                                    <lineargradient id="paint1_linear_263_589" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                    </lineargradient>
-                                 </defs>
-                              </svg>
-                           </div>
-                           <p class="quote">ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Taylor is a professional Designer he really helps my business by providing
-                              value to my business.</p>
-                           <h4 class="name">Brandon Fraser</h4>
-                           <span class="designation">Senior Software Dev, Cosmic Sport</span>
-                        </div>
-                        <div class="testimonial-item">
-                           <div class="top-area d-flex flex-wrap justify-content-between">
-                              <div class="logo-box">
-                                 <img src="assets/img/testimonials/logo/2-dark.png" alt="">
-                              </div>
-                              <div class="image-box">
-                                 <img src="assets/img/testimonials/user/2.jpg" alt="">
-                              </div>
-                           </div>
-                           <div class="icon-box">
-                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint2_linear_263_511)"></path>
-                                 <defs>
-                                    <lineargradient id="paint2_linear_263_511" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                    </lineargradient>
-                                 </defs>
-                              </svg>
-                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint3_linear_263_510)"></path>
-                                 <defs>
-                                    <lineargradient id="paint3_linear_263_510" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                    </lineargradient>
-                                 </defs>
-                              </svg>
-                           </div>
-                           <p class="quote">ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Taylor is a professional Designer he really helps my business by providing
-                              value to my business.</p>
-                           <h4 class="name">Tim Bailey</h4>
-                           <span class="designation">SEO Specialist, Theme Junction</span>
-                        </div>
-                        <div class="testimonial-item">
-                           <div class="top-area d-flex flex-wrap justify-content-between">
-                              <div class="logo-box">
-                                 <img src="assets/img/testimonials/logo/1-dark.png" alt="">
-                              </div>
-                              <div class="image-box">
-                                 <img src="assets/img/testimonials/user/1.jpg" alt="">
-                              </div>
-                           </div>
-                           <div class="icon-box">
-                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint4_linear_263_512)"></path>
-                                 <defs>
-                                    <lineargradient id="paint4_linear_263_512" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                    </lineargradient>
-                                 </defs>
-                              </svg>
-                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint5_linear_263_513)"></path>
-                                 <defs>
-                                    <lineargradient id="paint5_linear_263_513" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                    </lineargradient>
-                                 </defs>
-                              </svg>
-                           </div>
-                           <p class="quote">ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Taylor is a professional Designer he really helps my business by providing
-                              value to my business.</p>
-                           <h4 class="name">Brandon Fraser</h4>
-                           <span class="designation">Senior Software Dev, Cosmic Sport</span>
-                        </div>
-                        <div class="testimonial-item">
-                           <div class="top-area d-flex flex-wrap justify-content-between">
-                              <div class="logo-box">
-                                 <img src="assets/img/testimonials/logo/2-dark.png" alt="">
-                              </div>
-                              <div class="image-box">
-                                 <img src="assets/img/testimonials/user/2.jpg" alt="">
-                              </div>
-                           </div>
-                           <div class="icon-box">
-                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint6_linear_263_514)"></path>
-                                 <defs>
-                                    <lineargradient id="paint6_linear_263_514" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                    </lineargradient>
-                                 </defs>
-                              </svg>
-                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint7_linear_263_515)"></path>
-                                 <defs>
-                                    <lineargradient id="paint7_linear_263_515" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                    </lineargradient>
-                                 </defs>
-                              </svg>
-                           </div>
-                           <p class="quote">ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Taylor is a professional Designer he really helps my business by providing
-                              value to my business.</p>
-                           <h4 class="name">Tim Bailey</h4>
-                           <span class="designation">SEO Specialist, Theme Junction</span>
-                        </div>
-                        <div class="testimonial-item">
-                           <div class="top-area d-flex flex-wrap justify-content-between">
-                              <div class="logo-box">
-                                 <img src="assets/img/testimonials/logo/1-dark.png" alt="">
-                              </div>
-                              <div class="image-box">
-                                 <img src="assets/img/testimonials/user/1.jpg" alt="">
-                              </div>
-                           </div>
-                           <div class="icon-box">
-                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint8_linear_263_512)"></path>
-                                 <defs>
-                                    <lineargradient id="paint8_linear_263_512" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                    </lineargradient>
-                                 </defs>
-                              </svg>
-                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint9_linear_263_513)"></path>
-                                 <defs>
-                                    <lineargradient id="paint9_linear_263_513" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                    </lineargradient>
-                                 </defs>
-                              </svg>
-                           </div>
-                           <p class="quote">ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Taylor is a professional Designer he really helps my business by providing
-                              value to my business.</p>
-                           <h4 class="name">Brandon Fraser</h4>
-                           <span class="designation">Senior Software Dev, Cosmic Sport</span>
-                        </div>
-                        <div class="testimonial-item">
-                           <div class="top-area d-flex flex-wrap justify-content-between">
-                              <div class="logo-box">
-                                 <img src="assets/img/testimonials/logo/2-dark.png" alt="">
-                              </div>
-                              <div class="image-box">
-                                 <img src="assets/img/testimonials/user/2.jpg" alt="">
-                              </div>
-                           </div>
-                           <div class="icon-box">
-                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint10_linear_263_514)"></path>
-                                 <defs>
-                                    <lineargradient id="paint10_linear_263_514" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                    </lineargradient>
-                                 </defs>
-                              </svg>
-                              <svg width="22" height="22" viewbox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z" fill="url(#paint11_linear_263_515)"></path>
-                                 <defs>
-                                    <lineargradient id="paint11_linear_263_515" x1="-0.0363755" y1="-0.0729998" x2="35.3333" y2="-0.0729991" gradientunits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)"></stop>
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0"></stop>
-                                    </lineargradient>
-                                 </defs>
-                              </svg>
-                           </div>
-                           <p class="quote">ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“Taylor is a professional Designer he really helps my business by providing
-                              value to my business.</p>
-                           <h4 class="name">Tim Bailey</h4>
-                           <span class="designation">SEO Specialist, Theme Junction</span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section> -->
-      <!-- TESTIMONIAL SECTION END -->
-
-      <!-- CONTACT SECTION START -->
-      <section class="contact-section" id="contact-section">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-6 col-md-7 order-2 order-md-1">
-                  <div class="contact-form-box wow fadeInLeft" data-wow-delay=".3s">
-                     <div class="section-header">
-                        <h2 class="section-title">Let's work together!</h2>
-                        <p>I design and build simple, useful AI and software products that solve real problems.</p>
-                     </div>
-
-                     <div class="tj-contact-form">
-                        <form id="contact-form">
-                           <input type="hidden" name="_subject" value="New portfolio contact submission">
-                           <input type="hidden" name="_template" value="table">
-                           <input type="hidden" name="_captcha" value="false">
-                           <input type="text" name="_honey" style="display:none">
-                           <div class="row gx-3">
-                              <div class="col-sm-6">
-                                 <div class="form_group">
-                                    <input type="text" name="conName" id="conName" placeholder="First name" autocomplete="off">
-                                 </div>
-                              </div>
-                              <div class="col-sm-6">
-                                 <div class="form_group">
-                                    <input type="text" name="conLName" id="conLName" placeholder="Last name" autocomplete="off">
-                                 </div>
-                              </div>
-                              <div class="col-sm-6">
-                                 <div class="form_group">
-                                    <input type="email" name="conEmail" id="conEmail" placeholder="Email address" autocomplete="off">
-                                 </div>
-                              </div>
-                              <div class="col-sm-6">
-                                 <div class="form_group">
-                                    <input type="tel" name="conPhone" id="conPhone" placeholder="Phone number" autocomplete="off">
-                                 </div>
-                              </div>
-                              <!-- <div class="col-12">
-                                 <div class="form_group">
-                                    <select name="conService" id="conService" class="tj-nice-select">
-                                       <option value="" selected="" disabled="">Choose Service</option>
-                                       <option value="braning">Branding Design</option>
-                                       <option value="web">Web Design</option>
-                                       <option value="uxui">UI/UX Design</option>
-                                       <option value="app">App Design</option>
-                                    </select>
-                                 </div>
-                              </div> -->
-                              <div class="col-12">
-                                 <div class="form_group">
-                                    <textarea name="conMessage" id="conMessage" placeholder="Message"></textarea>
-                                 </div>
-                              </div>
-                              <div class="col-12">
-                                 <div class="form_btn">
-                                    <button type="submit" class="btn tj-btn-primary">Send Message</button>
-                                 </div>
-                              </div>
-                           </div>
-                        </form>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="col-lg-5 offset-lg-1 col-md-5 d-flex flex-wrap align-items-center order-1 order-md-2">
-                  <div class="contact-info-list">
-                     <ul class="ul-reset">
-                        <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight" data-wow-delay=".4s">
-                           <div class="icon-box">
-                              <i class="flaticon-phone-call"></i>
-                           </div>
-                           <div class="text-box">
-                              <p>Phone</p>
-                              <a href="tel:+919822634213">+91 9822634213</a>
-                           </div>
-                        </li>
-                        <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight" data-wow-delay=".5s">
-                           <div class="icon-box">
-                              <i class="flaticon-mail-inbox-app"></i>
-                           </div>
-                           <div class="text-box">
-                              <p>Email</p>
-                              <a href="mailto:kunalwagh282@gmail.com">kunalwagh282@gmail.com</a>
-                           </div>
-                        </li>
-                        <li class="d-flex flex-wrap align-items-center position-relative wow fadeInRight" data-wow-delay=".6s">
-                           <div class="icon-box">
-                              <i class="flaticon-location"></i>
-                           </div>
-                           <div class="text-box">
-                              <p>Address</p>
-                              <a>Chh. Sambhajinagar,<br>Maharashtra,<br> India.</a>
-                           </div>
-                        </li>
+                     <ul class="chips">
+                        <li>Python</li><li>FastAPI</li><li>LangGraph</li><li>LangChain</li><li>OpenAI</li><li>Redis</li><li>NATS</li><li>MSSQL</li><li>Docker</li><li>LLM agents</li>
                      </ul>
+                     <p class="case__note">Described in general terms; no proprietary details.</p>
+                  </div>
+                  <figure class="arch" aria-label="Simplified ChatIQ request flow">
+                     <figcaption>Simplified request flow</figcaption>
+                     <ol class="arch__flow">
+                        <li><span>Resident / prospect message</span></li>
+                        <li><span>FastAPI service</span><small>auth · property config</small></li>
+                        <li class="arch__core"><span>LangGraph agent</span><small>context resolution · tool gating</small></li>
+                        <li class="arch__tools">
+                           <span>Tools</span>
+                           <small>availability</small><small>tours</small><small>rent</small><small>maintenance</small><small>policy</small>
+                        </li>
+                        <li><span>Data &amp; messaging</span><small>MSSQL · Redis · NATS</small></li>
+                        <li><span>Observability</span><small>logs · LLM traces</small></li>
+                     </ol>
+                  </figure>
+               </div>
+            </article>
+
+            <!-- 02 WheelSafar -->
+            <article class="case reveal" id="wheelsafar">
+               <div class="case__head">
+                  <p class="case__index">02</p>
+                  <div>
+                     <p class="case__type">Production mobility backend</p>
+                     <h3 class="case__title">WheelSafar</h3>
+                  </div>
+                  <span class="badge badge--live">Live</span>
+               </div>
+               <p class="case__lead">The backend behind a live mobility platform — from ride booking to live tracking to rewards — built and run end to end.</p>
+               <div class="pillars">
+                  <div class="pillar"><h4>Backend</h4><p>FastAPI · SQLAlchemy · 60+ REST APIs · WebSockets</p></div>
+                  <div class="pillar"><h4>Data</h4><p>PostgreSQL on RDS · Redis · geospatial queries</p></div>
+                  <div class="pillar"><h4>Infrastructure</h4><p>Docker · EC2 · ALB · S3 · EventBridge · SSM</p></div>
+                  <div class="pillar"><h4>Reliability</h4><p>CloudWatch · health checks · FCM delivery</p></div>
+               </div>
+               <details class="case__more">
+                  <summary>Open case study <svg class="icon"><use href="#i-down"/></svg></summary>
+                  <div class="case__more-body">
+                     <div class="case__block">
+                        <h4>Problem</h4>
+                        <p>A mobility product needs more than CRUD: rides change state in real time, riders and drivers need live location, and notifications have to arrive reliably.</p>
+                     </div>
+                     <div class="case__block">
+                        <h4>Feature areas</h4>
+                        <ul class="feature-list">
+                           <li>Ride lifecycle</li><li>Live tracking</li><li>WebSocket channels</li><li>Push notifications</li><li>Referrals &amp; rewards</li><li>Geospatial discovery</li><li>Saved routes</li><li>User telemetry</li>
+                        </ul>
+                     </div>
+                     <div class="case__block">
+                        <h4>Architecture</h4>
+                        <p>Clients reach containerised FastAPI services on EC2 through an Application Load Balancer. PostgreSQL on RDS is the system of record, Redis handles hot and real-time state, S3 stores media, EventBridge drives scheduled jobs, SSM holds configuration and CloudWatch covers logs and alarms.</p>
+                     </div>
+                     <div class="case__block">
+                        <h4>Outcome</h4>
+                        <p>[ADD VERIFIED METRIC — e.g. users, rides or uptime]</p>
+                     </div>
+                  </div>
+               </details>
+            </article>
+
+            <!-- 03 Fashion assistant -->
+            <article class="case case--split reveal" id="fashion">
+               <div class="case__copy">
+                  <div class="case__head">
+                     <p class="case__index">03</p>
+                     <div>
+                        <p class="case__type">Conversational commerce · RAG + agents</p>
+                        <h3 class="case__title">AI Fashion Sales Assistant</h3>
+                     </div>
+                     <span class="badge badge--wip">In development</span>
+                  </div>
+                  <p class="case__lead">An assistant that behaves like a good salesperson in a fashion store: it knows the catalogue, remembers what you bought and suggests what goes with it.</p>
+                  <ul class="case__list">
+                     <li><b>Retrieval</b> over product catalogue and attributes</li>
+                     <li><b>Memory</b> of customer preferences and past purchases</li>
+                     <li><b>Agent tools</b> for search, similar items and complementary products</li>
+                     <li><b>Recommendations</b> explained in plain language</li>
+                  </ul>
+                  <ul class="chips"><li>Python</li><li>FastAPI</li><li>LangGraph</li><li>RAG</li><li>Vector search</li><li>Tool calling</li></ul>
+               </div>
+               <div class="chat" aria-label="Example conversation (illustrative mock-up)">
+                  <div class="chat__top"><span class="chat__avatar" aria-hidden="true">AI</span> Store assistant <small>mock-up</small></div>
+                  <div class="chat__msg chat__msg--user">Do you have pants that match this shirt?</div>
+                  <div class="chat__msg chat__msg--bot">That's the navy oxford you bought in March. Beige chinos or charcoal trousers both work — here are three in your usual size:</div>
+                  <div class="chat__products" aria-hidden="true">
+                     <div class="prod"><span class="prod__sw" style="--c:#cdb894"></span>Slim chino<small>Beige · 32</small></div>
+                     <div class="prod"><span class="prod__sw" style="--c:#4a4d54"></span>Wool trouser<small>Charcoal · 32</small></div>
+                     <div class="prod"><span class="prod__sw" style="--c:#e9e4d8"></span>Linen pant<small>Ecru · 32</small></div>
+                  </div>
+                  <div class="chat__msg chat__msg--user">What shoes go with the chinos?</div>
+                  <div class="chat__typing" aria-hidden="true"><span></span><span></span><span></span></div>
+               </div>
+            </article>
+
+            <!-- 04 + 05 -->
+            <div class="duo">
+               <article class="pcard reveal">
+                  <div class="pcard__img"><img src="assets/img/portfolio/expodash.webp" alt="ExpoDash dashboard screenshot" loading="lazy" decoding="async" width="960" height="640"></div>
+                  <div class="pcard__body">
+                     <p class="case__index">04</p>
+                     <h3>ExpoDash</h3>
+                     <p class="pcard__type">Export operating system for MSMEs</p>
+                     <p>A platform that helps small exporters run shipments, documents and operations in one place.</p>
+                     <ul class="chips chips--sm"><li>Web platform</li><li>Dashboards</li><li>Workflows</li></ul>
+                     <a class="link" href="https://www.expodash.com" target="_blank" rel="noopener">expodash.com <svg class="icon"><use href="#i-arrow"/></svg></a>
+                  </div>
+               </article>
+               <article class="pcard reveal">
+                  <div class="pcard__img"><img src="assets/img/portfolio/devnagiri-sign-language.webp" alt="Devnagiri sign language recognition demo" loading="lazy" decoding="async" width="960" height="640"></div>
+                  <div class="pcard__body">
+                     <p class="case__index">05</p>
+                     <h3>Devnagiri Sign Language Recognition</h3>
+                     <p class="pcard__type">Computer vision · ML</p>
+                     <p>Real-time recognition of 47 Devnagiri sign classes using MediaPipe hand landmarks and ML/DL models.</p>
+                     <ul class="chips chips--sm"><li>MediaPipe</li><li>TensorFlow</li><li>OpenCV</li></ul>
+                     <a class="link" href="https://github.com/Kunal-Wagh282/DevNagri-Sign-Language-Detection" target="_blank" rel="noopener">View on GitHub <svg class="icon"><use href="#i-arrow"/></svg></a>
+                  </div>
+               </article>
+            </div>
+
+            <!-- Archive -->
+            <details class="archive reveal">
+               <summary>Other projects <span class="archive__count">8</span> <svg class="icon"><use href="#i-down"/></svg></summary>
+               <ul class="archive__list">
+                  <li><a href="https://github.com/Kunal-Wagh282/Lung_Capacity_Enhancer-GDSC-Repo-" target="_blank" rel="noopener"><span>Lung Capacity Enhancer</span><small>IoT healthcare MVP · Arduino, React, DRF · Google Solution Challenge Top 100</small></a></li>
+                  <li><a href="https://github.com/Kunal-Wagh282/Blow-the-seeds-Udumutthu-" target="_blank" rel="noopener"><span>Udumutthu VR Rehab Game</span><small>Meta Quest 2 game with pressure sensors for pediatric pulmonary rehab</small></a></li>
+                  <li><a href="https://github.com/Kunal-Wagh282/ML-Natural-Language-Vendor-Assistant-Internship" target="_blank" rel="noopener"><span>Natural Language Vendor Assistant</span><small>TensorFlow NLP chatbot with CLI and Django interface</small></a></li>
+                  <li><a href="https://github.com/Kunal-Wagh282/Cafe_Querator_Vercel" target="_blank" rel="noopener"><span>Cafe Querator</span><small>Spotify-powered cafe music queue with table song requests</small></a></li>
+                  <li><a href="https://github.com/Kunal-Wagh282/Cafe-Karma" target="_blank" rel="noopener"><span>Cafe Karma</span><small>Web platform for cafe discovery</small></a></li>
+                  <li><a href="https://github.com/Kunal-Wagh282/AMS_Face_Recognition" target="_blank" rel="noopener"><span>Face Recognition Attendance</span><small>Python, OpenCV, Tkinter and MySQL</small></a></li>
+                  <li><a href="https://github.com/Kunal-Wagh282/Happy_Sad_Image__Classifier" target="_blank" rel="noopener"><span>Happy/Sad Image Classifier</span><small>CNN with TensorFlow and OpenCV</small></a></li>
+                  <li><a href="https://github.com/Kunal-Wagh282/Titanic_Dataset_Logistic_Regression" target="_blank" rel="noopener"><span>Titanic Survival Analysis</span><small>Logistic regression and feature analysis</small></a></li>
+               </ul>
+               <a class="link archive__gh" href="https://github.com/Kunal-Wagh282?tab=repositories" target="_blank" rel="noopener">All repositories on GitHub <svg class="icon"><use href="#i-arrow"/></svg></a>
+            </details>
+         </div>
+      </section>
+
+      <!-- HOW I THINK ABOUT AI + APPROACH -->
+      <section class="section section--alt" id="approach" aria-labelledby="approach-title">
+         <div class="container">
+            <header class="section__head reveal">
+               <p class="kicker">04 — How I work</p>
+               <h2 id="approach-title">From business problem to production.</h2>
+            </header>
+            <ol class="pipeline reveal" aria-label="AI engineering lifecycle">
+               <li><span>Business problem</span></li>
+               <li><span>Data &amp; context</span></li>
+               <li><span>LLM / model</span></li>
+               <li><span>Tools &amp; retrieval</span></li>
+               <li><span>Agent workflow</span></li>
+               <li><span>Backend</span></li>
+               <li><span>Observability</span></li>
+               <li class="pipeline__end"><span>Production</span></li>
+            </ol>
+            <div class="principles">
+               <article class="principle reveal"><h3>Build for production</h3><p>Error handling, health checks, logs and traces are part of the feature, not an afterthought.</p></article>
+               <article class="principle reveal"><h3>AI is software</h3><p>LLMs belong inside real backends and workflows, with the same testing and reliability bar as any other service.</p></article>
+               <article class="principle reveal"><h3>Learn by building</h3><p>I try new AI tooling by shipping something small with it, then keep what holds up.</p></article>
+               <article class="principle reveal"><h3>Keep improving</h3><p>Currently going deeper on system design, distributed systems and production-scale AI.</p></article>
+            </div>
+         </div>
+      </section>
+
+      <!-- TECH STACK -->
+      <section class="section" id="stack" aria-labelledby="stack-title">
+         <div class="container">
+            <header class="section__head reveal">
+               <p class="kicker">05 — Stack</p>
+               <h2 id="stack-title">Tools I use in production.</h2>
+            </header>
+            <div class="stack">
+               <div class="stack__row reveal"><h3>GenAI</h3><ul class="chips"><li class="hot">LangGraph</li><li class="hot">LangChain</li><li>LlamaIndex</li><li class="hot">OpenAI</li><li>RAG</li><li>LLM agents</li><li>Tool calling</li><li>Prompt engineering</li></ul></div>
+               <div class="stack__row reveal"><h3>Backend</h3><ul class="chips"><li class="hot">FastAPI</li><li>SQLAlchemy</li><li>Pydantic</li><li>Async Python</li><li>REST APIs</li><li>WebSockets</li></ul></div>
+               <div class="stack__row reveal"><h3>Data &amp; messaging</h3><ul class="chips"><li class="hot">PostgreSQL</li><li>MSSQL</li><li class="hot">Redis</li><li>NATS</li></ul></div>
+               <div class="stack__row reveal"><h3>Infrastructure</h3><ul class="chips"><li class="hot">Docker</li><li class="hot">AWS</li><li>EC2</li><li>RDS</li><li>S3</li><li>ALB</li><li>EventBridge</li><li>SSM</li><li>GitHub Actions</li></ul></div>
+               <div class="stack__row reveal"><h3>Observability</h3><ul class="chips"><li>CloudWatch</li><li>Kibana</li><li>Phoenix</li></ul></div>
+               <div class="stack__row reveal"><h3>Languages</h3><ul class="chips"><li class="hot">Python</li><li>SQL</li><li>JavaScript</li><li>C</li><li>C#</li></ul></div>
+               <div class="stack__row reveal"><h3>ML &amp; CV</h3><ul class="chips"><li>TensorFlow</li><li>scikit-learn</li><li>OpenCV</li><li>MediaPipe</li></ul></div>
+            </div>
+         </div>
+      </section>
+
+      <!-- ACHIEVEMENTS + EDUCATION -->
+      <section class="section section--alt" id="achievements" aria-labelledby="ach-title">
+         <div class="container">
+            <header class="section__head reveal">
+               <p class="kicker">06 — Recognition</p>
+               <h2 id="ach-title">Achievements.</h2>
+            </header>
+            <div class="awards">
+               <article class="award reveal">
+                  <p class="award__rank">Global Top 100</p>
+                  <h3>Google Solution Challenge 2024</h3>
+                  <p>Lung Capacity Enhancer, an IoT healthcare solution for pulmonary exercise, placed in the global top 100.</p>
+                  <a class="link" href="https://www.linkedin.com/posts/kunalwagh282_googlesolutionchallenge-gdsc-top100-activity-7182750470279483392-Mu4D" target="_blank" rel="noopener">LinkedIn post <svg class="icon"><use href="#i-arrow"/></svg></a>
+               </article>
+               <article class="award reveal">
+                  <p class="award__rank">Winner</p>
+                  <h3>Cognizant Digital Nurture Technoverse 2023</h3>
+                  <p>Won the national hackathon with a healthcare prototype and earned an internship at Cognizant.</p>
+                  <a class="link" href="https://www.linkedin.com/posts/kunalwagh282_cognizant-technoverse2023champions-hackathon-activity-7175937535871762433-R9rG" target="_blank" rel="noopener">LinkedIn post <svg class="icon"><use href="#i-arrow"/></svg></a>
+               </article>
+               <article class="award reveal">
+                  <p class="award__rank">National runner-up</p>
+                  <h3>Young Indians Innovation (YI · CII IDS3)</h3>
+                  <p>Healthcare MVP validated with users and prototype testing; awarded INR 1,00,000.</p>
+                  <a class="link" href="https://www.linkedin.com/posts/kunalwagh282_innovation-healthcare-pediatriccare-activity-7149396875194920961-854S" target="_blank" rel="noopener">LinkedIn post <svg class="icon"><use href="#i-arrow"/></svg></a>
+               </article>
+               <article class="award reveal">
+                  <p class="award__rank">National level</p>
+                  <h3>Badminton</h3>
+                  <p>Represented MGM University in national-level inter-university competition.</p>
+               </article>
+            </div>
+
+            <div class="edu reveal" id="education">
+               <p class="kicker">Education</p>
+               <div class="edu__row">
+                  <div>
+                     <h3>B.Tech, Computer Science &amp; Engineering</h3>
+                     <p>Honours in Data Science · JNEC, MGM University</p>
+                  </div>
+                  <div class="edu__meta">
+                     <span>2021 — 2025</span>
+                     <span class="edu__gpa">CGPA 8.89 / 10</span>
                   </div>
                </div>
             </div>
          </div>
       </section>
-      <!-- CONTACT SECTION END -->
 
-      <!-- BEGIN: Contact Form Success Modal Message -->
-      <div class="modal contact_modal" id="message_sent" tabindex="-1">
-         <div class="modal-dialog">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <span class="modal-title"><strong>Message Sent Successfully</strong></span>
-                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+      <!-- CONTACT -->
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+         <div class="container contact__grid">
+            <div class="contact__copy reveal">
+               <p class="kicker">07 — Contact</p>
+               <h2 id="contact-title">Let's build intelligent systems.</h2>
+               <p>Open to roles in <strong>GenAI</strong>, <strong>AI engineering</strong>, <strong>backend engineering</strong> and <strong>LLM / agentic AI</strong> at product companies and strong startups.</p>
+               <div class="contact__links">
+                  <a class="btn btn--primary" href="mailto:kunalwagh282@gmail.com"><svg class="icon"><use href="#i-mail"/></svg> kunalwagh282@gmail.com</a>
+                  <a class="btn btn--ghost" href="https://www.linkedin.com/in/kunalwagh282/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-linkedin"/></svg> LinkedIn</a>
+                  <a class="btn btn--ghost" href="https://github.com/Kunal-Wagh282" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg> GitHub</a>
+                  <a class="btn btn--ghost" href="https://drive.google.com/drive/folders/1rIMPh-4oaZP5ARAqN5UNm5HF-CdF3_22?usp=sharing" target="_blank" rel="noopener"><svg class="icon"><use href="#i-file"/></svg> Resume</a>
                </div>
-               <div class="modal-body">
-                  <p>Thank you for contacting. I will get back to you shortly.<br>Have a great day!</p>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
-               </div>
+               <p class="contact__meta">Chhatrapati Sambhajinagar, Maharashtra, India · <a href="tel:+919822634213">+91 98226 34213</a></p>
             </div>
-         </div>
-      </div>
-      <!-- END: Contact Form Success Modal Message -->
 
-      <!-- BEGIN: Contact Form Fail Modal Message -->
-      <div class="modal contact_modal failed" id="message_fail" tabindex="-1">
-         <div class="modal-dialog">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <span class="modal-title"><strong>Error</strong></span>
-                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            <form class="form reveal" id="contactForm" novalidate>
+               <input type="hidden" name="_subject" value="New portfolio contact submission">
+               <input type="hidden" name="_template" value="table">
+               <input type="hidden" name="_captcha" value="false">
+               <input type="text" name="_honey" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+               <div class="form__row">
+                  <label>Name<input type="text" name="name" autocomplete="name" required></label>
+                  <label>Email<input type="email" name="email" autocomplete="email" required></label>
                </div>
-               <div class="modal-body">
-                  <p>Oops! Something went wrong, please try again.</p>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
-               </div>
-            </div>
+               <label>Company (optional)<input type="text" name="company" autocomplete="organization"></label>
+               <label>Message<textarea name="message" rows="5" required></textarea></label>
+               <button class="btn btn--primary" type="submit">Send message</button>
+               <p class="form__status" role="status" aria-live="polite"></p>
+            </form>
          </div>
-      </div>
-      <!-- END: Contact Form Fail Modal Message End -->
+      </section>
    </main>
 
-   <!-- FOOTER AREA START -->
-   <footer class="tj-footer-area">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12 text-center">
-               <div class="footer-logo-box">
-                  <a href="#"><img src="assets/img/logo/logo-dark.png" alt=""></a>
-               </div>
-               <div class="footer-menu">
-                  <nav>
-                     <ul>
-                        <li><a href="about.html">About</a></li>
-                        <!-- <li><a href="services.html">Services</a></li> -->
-                        <li><a href="portfolio.html">Projects</a></li>
-                        <li><a href="index.html#resume-section">Experience</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                     </ul>
-                  </nav>
-               </div>
-               <div class="copy-text">
-                  <p>&copy; 2026 All rights reserved by <a href="#" target="_blank">Kunal-Wagh</a></p>
-               </div>
-            </div>
-         </div>
+   <!-- FOOTER -->
+   <footer class="footer">
+      <div class="container footer__inner">
+         <p>© 2026 Kunal Wagh</p>
+         <nav class="footer__links" aria-label="Footer">
+            <a href="https://github.com/Kunal-Wagh282" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/kunalwagh282/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://drive.google.com/drive/folders/1rIMPh-4oaZP5ARAqN5UNm5HF-CdF3_22?usp=sharing" target="_blank" rel="noopener">Resume</a>
+            <a href="mailto:kunalwagh282@gmail.com">Email</a>
+         </nav>
       </div>
    </footer>
-   <!-- FOOTER AREA END -->
 
-   <!-- JS here -->
-   <script src="assets/js/jquery.min.js"></script>
-   <script src="assets/js/bootstrap.bundle.min.js"></script>
-   <script src="assets/js/nice-select.min.js"></script>
-   <script src="assets/js/backToTop.js"></script>
-   <script src="assets/js/appear.min.js"></script>
-   <script src="assets/js/wow.min.js"></script>
-   <script src="assets/js/gsap.min.js"></script>
-   <script src="assets/js/ScrollTrigger.min.js"></script>
-   <script src="assets/js/lenis.min.js"></script>
-   <script src="assets/js/lightcase.js"></script>
-   <script src="assets/js/owl.carousel.min.js"></script>
-   <script src="assets/js/swiper.min.js"></script>
-   <script src="assets/js/imagesloaded-pkgd.js"></script>
-   <script src="assets/js/isotope.pkgd.min.js"></script>
-   <script src="assets/js/odometer.min.js"></script>
-   <script src="assets/js/magnific-popup.js"></script>
-   <script src="assets/js/validate.min.js"></script>
-   <script src="assets/js/meanmenu.js"></script>
-   <script src="assets/js/main.js"></script>
+   <script src="assets/js/site.js" defer></script>
 </body>
 
 </html>
