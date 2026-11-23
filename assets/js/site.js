@@ -77,6 +77,15 @@
       reveals.forEach(function (el) { io.observe(el); });
    }
 
+   /* ---------- Experience: computed from start month, grows monthly ---------- */
+   document.querySelectorAll('[data-since]').forEach(function (el) {
+      var parts = el.dataset.since.split('-');
+      var now = new Date();
+      var months = (now.getFullYear() - +parts[0]) * 12 + (now.getMonth() + 1 - +parts[1]);
+      var years = Math.floor((months / 12) * 10) / 10; // floor to 1 decimal, never overstates
+      if (years > 0) { el.dataset.count = years; el.textContent = years.toFixed(1); }
+   });
+
    /* ---------- Stat count-up ---------- */
    var counters = document.querySelectorAll('[data-count]');
    function countUp(el) {
@@ -120,26 +129,50 @@
             firstBad.focus();
             return;
          }
-         submitBtn.disabled = true;
-         status.textContent = 'Sending…';
+         var fields = form.querySelectorAll('input:not([type="hidden"]), textarea');
+         var label = submitBtn.querySelector('.btn__label');
+         function setSending(on) {
+            form.classList.toggle('is-sending', on);
+            form.setAttribute('aria-busy', String(on));
+            submitBtn.disabled = on;
+            fields.forEach(function (f) { f.readOnly = on; });
+            label.textContent = on ? 'Sending…' : 'Send message';
+         }
+
+         var body = new FormData(form);
+         setSending(true);
+         status.textContent = 'Sending your message…';
+
+         var ctrl = 'AbortController' in window ? new AbortController() : null;
+         var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
+
          fetch('https://formsubmit.co/ajax/kunalwagh282@gmail.com', {
             method: 'POST',
             headers: { Accept: 'application/json' },
-            body: new FormData(form)
+            body: body,
+            signal: ctrl ? ctrl.signal : undefined
          })
-            .then(function (r) { return r.json(); })
+            .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
             .then(function (data) {
-               if (data.success === true || data.success === 'true') {
-                  status.textContent = 'Thanks — your message is on its way. I\'ll reply soon.';
-                  status.classList.add('is-ok');
-                  form.reset();
-               } else { throw new Error('fail'); }
+               if (!(data.success === true || data.success === 'true')) throw new Error('fail');
+               setSending(false);
+               form.reset();
+               status.textContent = 'Thanks — your message is on its way. I\'ll reply soon.';
+               status.classList.add('is-ok');
+               label.textContent = 'Sent ✓';
+               submitBtn.classList.add('is-done');
+               setTimeout(function () {
+                  label.textContent = 'Send message';
+                  submitBtn.classList.remove('is-done');
+               }, 3000);
             })
-            .catch(function () {
-               status.innerHTML = 'Something went wrong. Please email <a href="mailto:kunalwagh282@gmail.com">kunalwagh282@gmail.com</a> directly.';
+            .catch(function (err) {
+               setSending(false);
+               var why = err && err.name === 'AbortError' ? 'The request timed out.' : 'Something went wrong.';
+               status.innerHTML = why + ' Please try again or email <a href="mailto:kunalwagh282@gmail.com">kunalwagh282@gmail.com</a> directly.';
                status.classList.add('is-err');
             })
-            .finally(function () { submitBtn.disabled = false; });
+            .finally(function () { clearTimeout(timer); });
       });
    }
 })();

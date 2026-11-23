@@ -617,3 +617,33 @@ details[open] > summary .icon { transform: rotate(180deg); }
    .case__head .badge { margin-left: 32px; }
    .case__index { padding-top: 0; }
 }
+
+/* ---------- Contact form: sending state ---------- */
+.form { position: relative; overflow: hidden; }
+.form__progress {
+   position: absolute; top: 0; left: 0; right: 0; height: 2px;
+   opacity: 0; transition: opacity .2s; pointer-events: none;
+   background: linear-gradient(90deg, transparent, var(--accent-2), var(--accent), transparent);
+   background-size: 40% 100%; background-repeat: no-repeat;
+}
+.form.is-sending .form__progress { opacity: 1; animation: form-progress 1.1s linear infinite; }
+@keyframes form-progress { from { background-position: -40% 0; } to { background-position: 140% 0; } }
+
+.form.is-sending input, .form.is-sending textarea { opacity: .55; }
+
+.form__submit { position: relative; min-width: 168px; }
+.form__submit:disabled { cursor: progress; transform: none; }
+.btn__spinner {
+   display: none; width: 16px; height: 16px; border-radius: 50%;
+   border: 2px solid rgba(255, 255, 255, .35); border-top-color: #fff;
+   animation: spin .7s linear infinite;
+}
+.form.is-sending .btn__spinner { display: inline-block; }
+.form__submit.is-done { background: var(--live); box-shadow: 0 8px 24px -10px var(--live); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+   /* keep a visible (slow) spinner so users still see progress */
+   .form.is-sending .btn__spinner { animation: spin 1.6s linear infinite !important; animation-duration: 1.6s !important; animation-iteration-count: infinite !important; }
+   .form.is-sending .form__progress { animation: none; background: var(--accent); }
+}
