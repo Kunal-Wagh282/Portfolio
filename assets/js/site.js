@@ -139,12 +139,17 @@
             label.textContent = on ? 'Sending…' : 'Send message';
          }
 
-         var body = new FormData(form);
+         // URL-encoded body: same format the previous (working) jQuery version sent.
+         var body = new URLSearchParams(new FormData(form));
          setSending(true);
          status.textContent = 'Sending your message…';
 
+         // FormSubmit can take 20–30s to answer. Reassure after 8s; give up after 45s.
+         var slowTimer = setTimeout(function () {
+            status.textContent = 'Still sending — the mail service can be slow, hang tight…';
+         }, 8000);
          var ctrl = 'AbortController' in window ? new AbortController() : null;
-         var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
+         var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 45000);
 
          fetch('https://formsubmit.co/ajax/kunalwagh282@gmail.com', {
             method: 'POST',
@@ -168,11 +173,15 @@
             })
             .catch(function (err) {
                setSending(false);
-               var why = err && err.name === 'AbortError' ? 'The request timed out.' : 'Something went wrong.';
-               status.innerHTML = why + ' Please try again or email <a href="mailto:kunalwagh282@gmail.com">kunalwagh282@gmail.com</a> directly.';
+               if (err && err.name === 'AbortError') {
+                  // The server may still deliver it, so don't invite a duplicate resend.
+                  status.innerHTML = 'This is taking longer than usual — your message may still arrive. If you don\'t hear back, email <a href="mailto:kunalwagh282@gmail.com">kunalwagh282@gmail.com</a>.';
+               } else {
+                  status.innerHTML = 'Something went wrong. Please try again or email <a href="mailto:kunalwagh282@gmail.com">kunalwagh282@gmail.com</a> directly.';
+               }
                status.classList.add('is-err');
             })
-            .finally(function () { clearTimeout(timer); });
+            .finally(function () { clearTimeout(timer); clearTimeout(slowTimer); });
       });
    }
 })();
